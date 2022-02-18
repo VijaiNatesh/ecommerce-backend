@@ -9,6 +9,10 @@
     "mongoose": "^6.2.2",
     "nodemon": "^2.0.15"
   },
+  "engines": {
+    "node": "14.17.6",
+    "npm": "7.24.1"
+  },
   "scripts": {
     "start": "nodemon server.js",
     "server": "nodemon server.js",
