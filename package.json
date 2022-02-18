@@ -15,8 +15,7 @@
   },
   "scripts": {
     "start": "nodemon server.js",
-    "server": "nodemon server.js",
-    "dev": "concurrently \"npm run server\" \"npm run client\""
+    "server": "nodemon server.js"  
   },
   "name": "e-commerce",
   "version": "1.0.0",
