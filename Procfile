@@ -1,1 +1,1 @@
-web:nodemon dist /main.js
+web:npm run start
