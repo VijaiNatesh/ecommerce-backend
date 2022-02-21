@@ -14,12 +14,8 @@
     "npm": "7.24.1"
   },
   "scripts": {
-    "dev": "react-scripts start",
-    "start": "serve -s build",
-    "build": "react-scripts build",
-    "test": "react-scripts test --env=jsdom",
-    "eject": "react-scripts eject",
-    "heroku-postbuild": "npm run build"
+    "start": "nodemon server.js",
+    "server": "nodemon ecommerce/server.js"
   },
   "name": "e-commerce",
   "version": "1.0.0",
