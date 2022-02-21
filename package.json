@@ -8,11 +8,7 @@
     "mongoose": "^6.2.2",
     "nodemon": "^2.0.15",
     "serve": "^13.0.2"
-  },
-  "engines": {
-    "node": "14.17.6",
-    "npm": "7.24.1"
-  },
+  },  
   "scripts": {
     "start": "node server.js",
     "server": "nodemon ecommerce-backend/server.js"
