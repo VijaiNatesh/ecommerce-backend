@@ -11,7 +11,7 @@ const orderRoute = require("./routes/orderRoute")
 app.use(cors())
 app.use(express.json())
 app.get("/", (req,res) => {
-    res.send("E-Commerce Website")
+    res.send("Welcome to the E-Commerce Website Server")
 })
 app.use("/api/user", userRoute)
 app.use("/api/item", itemRoute)

@@ -15,7 +15,7 @@
   },
   "scripts": {
     "start": "node server.js",
-    "server": "nodemon ecommerce/server.js" 
+    "server": "nodemon ecommerce/server.js"
   },
   "name": "e-commerce",
   "version": "1.0.0",
