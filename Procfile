@@ -1,1 +1,1 @@
-web:npm start
+web:nodemon ecommerce-backend\server.js
