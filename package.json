@@ -6,15 +6,20 @@
     "express": "^4.17.3",
     "jsonwebtoken": "^8.5.1",
     "mongoose": "^6.2.2",
-    "nodemon": "^2.0.15"
+    "nodemon": "^2.0.15",
+    "serve": "^13.0.2"
   },
   "engines": {
     "node": "14.17.6",
     "npm": "7.24.1"
   },
   "scripts": {
-    "start": "nodemon server.js",
-    "server": "nodemon ecommerce/server.js"
+    "dev": "react-scripts start",
+    "start": "serve -s build",
+    "build": "react-scripts build",
+    "test": "react-scripts test --env=jsdom",
+    "eject": "react-scripts eject",
+    "heroku-postbuild": "npm run build"
   },
   "name": "e-commerce",
   "version": "1.0.0",
