@@ -1,1 +1,1 @@
-web:nodemon server.js
+web:nodemon dist /main.js
