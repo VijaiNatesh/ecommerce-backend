@@ -14,7 +14,7 @@
     "npm": "7.24.1"
   },
   "scripts": {
-    "start": "node server.js"    
+    "start": "nodemon server.js"    
   },
   "name": "e-commerce",
   "version": "1.0.0",
