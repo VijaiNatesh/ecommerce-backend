@@ -1,1 +1,1 @@
-web:nodemon ecommerce-backend\server.js
+web:nodemon dist /main.js
