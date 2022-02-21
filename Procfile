@@ -1,1 +1,1 @@
-web:nodemon dist /main.js
+worker :nodemon dist /main.js
