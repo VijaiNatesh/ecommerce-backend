@@ -18,8 +18,8 @@ app.use("/api/item", itemRoute)
 app.use("/api/cart", cartRoute)
 app.use("/api/order", orderRoute)
 
-const PORT = process.env.PORT || 5000;
 
-app.listen(PORT, () => {
-    console.log(`Server is running on ${PORT}`)
+
+app.listen(process.env.PORT || 5000, () => {
+    console.log('Server is running')
 })
