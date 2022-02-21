@@ -14,7 +14,8 @@
     "npm": "7.24.1"
   },
   "scripts": {
-    "start": "nodemon server.js"   
+    "start": "nodemon server.js",
+    "postinstall": "npm run build"
   },
   "name": "e-commerce",
   "version": "1.0.0",
