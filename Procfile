@@ -1,1 +1,1 @@
-web: nodemon dist /main.js
+web: node dist /main.js
