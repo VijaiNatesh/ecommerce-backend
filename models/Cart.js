@@ -3,7 +3,7 @@ const conn = mongoose.createConnection(process.env.MONGO_URL)
 
 const CartSchema = new mongoose.Schema({
     userId: {
-        type: mongoose.Schema.Types.ObjectId
+        type: String
     },
     items: [{
         productId: {
