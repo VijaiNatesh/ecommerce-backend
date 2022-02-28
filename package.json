@@ -9,10 +9,6 @@
     "nodemon": "^2.0.15",
     "serve": "^13.0.2"
   },
-  "engines": {
-    "node": "14.17.6",
-    "npm": "7.24.1"
-  },
   "scripts": {
     "start": "nodemon server.js",
     "server" : "nodemon ecommerce/server.js"
