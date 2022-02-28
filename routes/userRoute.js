@@ -7,11 +7,11 @@ const bcrypt = require('bcryptjs')
 userRoute.post("/register", async(req, res) => {
     const {name, email, password} = req.body;
     if(!name || !email || !password){
-        res.status(400).json("Enter all the fields")
+        res.send("Enter all the fields")
     }
     const user = await User.findOne({email})
     if(user){
-        res.status(400).json("User already Exists")
+        res.send("User already Exists")
     }
     const newUser = await User.create({name, email, password})
     res.send("User Registered")
