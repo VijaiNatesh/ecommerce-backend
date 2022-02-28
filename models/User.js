@@ -1,6 +1,6 @@
 const mongoose = require('mongoose')
 const conn = mongoose.createConnection(process.env.MONGO_URL)
-const bcrypt = require('bcrypt')
+const bcrypt = require('bcryptjs')
 
 const UserSchema = new mongoose.Schema({
     name: {
