@@ -20,11 +20,7 @@
   "name": "e-commerce",
   "version": "1.0.0",
   "description": "e-commerce website",
-  "main": "server.js",
-  "keywords": [
-    "e-commerce",
-    "website"
-  ],
+  "main": "server.js",  
   "author": "vijayakumar",
   "license": "ISC"
 }
