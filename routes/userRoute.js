@@ -31,7 +31,7 @@ userRoute.post("/login", async(req,res) => {
     if(!isMatch){
         res.send("Invalid Credentials")
     }
-    res.send(user)
+    res.send(`Welcome ${user.name}`)
 })
 
 module.exports = userRoute
