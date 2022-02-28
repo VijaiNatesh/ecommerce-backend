@@ -21,15 +21,15 @@ userRoute.post("/register", async(req, res) => {
 userRoute.post("/login", async(req,res) => {
     const {email, password} = req.body;
     if(!email || !password){
-        res.status(400).json("Enter all the fields")
+        res.send("Enter all the fields")
     }
     const user = await User.findOne({email})
     if(!user){
-        res.status(400).json("User does not exists")
+        res.send("User does not exists")
     }
     const isMatch = await bcrypt.compare(password, user.password);
     if(!isMatch){
-        res.status(400).json("Invalid Credentials")
+        res.send("Invalid Credentials")
     }
     res.json({
         name: user.name
