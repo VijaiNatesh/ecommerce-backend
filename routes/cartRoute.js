@@ -105,6 +105,8 @@ cartRoute.put("/update/:id", async(req, res) => {
 })
 
 cartRoute.delete("/cartdelete/:userId/:itemId", async(req, res) => {
+    const userId = req.params.userId;
+    const productId = req.params.itemId;
     try{
         let cart = await Cart.findOne({userId});
         let itemIndex = cart.items.findIndex(p => p.productId == productId);
