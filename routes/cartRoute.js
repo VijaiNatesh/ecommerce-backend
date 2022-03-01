@@ -12,7 +12,7 @@ cartRoute.post('/addcart/:id', async (req, res) => {
         let cart = await Cart.findOne({ userId })
         let item = await Item.findOne({ _id: productId })
         if (!item) {
-            res.status(400).json("Item not found")
+            res.send("Item not found")
         }
         const price = item.price
         const name = item.title
@@ -34,7 +34,7 @@ cartRoute.post('/addcart/:id', async (req, res) => {
         else {
             let item = await Item.findOne({ _id: productId })
             if (!item) {
-                res.status(400).json("Item not found")
+                res.send("Item not found")
             }
             const price = item.price
             const name = item.title
@@ -47,7 +47,7 @@ cartRoute.post('/addcart/:id', async (req, res) => {
         }
     }
     catch (err) {
-        res.status(500).json("Something went wrong")
+        res.send("Something went wrong")
     }
 })
 
@@ -63,7 +63,44 @@ cartRoute.get("/cartdetails/:id", async(req, res) => {
         }
     }
     catch(err){
-        res.status(500).send("Something went wrong");
+        res.send("Something went wrong");
+    }
+})
+
+cartRoute.put("/update/:id", async(req, res) => {
+    const userId = req.params.id;
+    const { productId, qty } = req.body;
+
+    try{
+        let cart = await Cart.findOne({userId});
+        let item = await Item.findOne({_id: productId});
+
+        if(!item)
+            return res.send('Item not found!'); // not returning will continue further execution of code.
+        
+        if(!cart)
+          return res.send("Cart not found");
+        else{
+            // if cart exists for the user
+            let itemIndex = cart.items.findIndex(p => p.productId == productId);
+
+            // Check if product exists or not
+            if(itemIndex == -1)
+              return res.send('Item not found in cart!');
+            else {
+                let productItem = cart.items[itemIndex];
+                productItem.quantity = qty;
+                cart.items[itemIndex] = productItem;
+            }
+            cart.bill = cart.items.reduce((sum, item) => sum + item.price * item.quantity,0);
+            cart = await cart.save();
+            return res.send(cart);
+        }     
+    }
+    catch (err) {
+        // just printing the error wont help us find where is the error. Add some understandable string to it.
+        console.log("Error in update cart", err);
+        res.send("Something went wrong");
     }
 })
 
