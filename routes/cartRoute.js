@@ -69,7 +69,7 @@ cartRoute.get("/cartdetails/:id", async(req, res) => {
 
 cartRoute.put("/update/:id", async(req, res) => {
     const userId = req.params.id;
-    const { productId, qty } = req.body;
+    const { productId, quantity } = req.body;
 
     try{
         let cart = await Cart.findOne({userId});
@@ -89,7 +89,7 @@ cartRoute.put("/update/:id", async(req, res) => {
               return res.send('Item not found in cart!');
             else {
                 let productItem = cart.items[itemIndex];
-                productItem.quantity = qty;
+                productItem.quantity = quantity;
                 cart.items[itemIndex] = productItem;
             }
             cart.bill = cart.items.reduce((sum, item) => sum + item.price * item.quantity,0);
